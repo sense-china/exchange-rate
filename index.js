@@ -12,12 +12,12 @@ let resultConvert;
 async function convertMoneyRefresh() {
   let data = undefined
   try{
-    const response = await fetch(`https://${url}/v6/${key}/pair/USD/EUR/1`)
+    const response = await fetch(`https://${url}/v6/${key}/pair/USD/CNY/1`)
     data = await response.json()
     let convert = data.conversion_result.toFixed(2)
     resultConvert = convert
     amountInitial.innerHTML = '1 USD ='
-    result.innerHTML = `${convert} EUR`
+    result.innerHTML = `${convert} CNY`
     lastUpdate.innerHTML = data.time_last_update_utc.slice(5, 16)
   }
   catch (error){
